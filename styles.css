@@ -39,11 +39,6 @@ h1 {
     margin: auto;
     padding: 1rem;
     text-align: center;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; */
 }
 
 
@@ -60,7 +55,7 @@ h1 {
 .game-play button */
 
 .game-play input,
-.game-play button {
+.btn {
     display: inline-block;
     width: 100%;
     margin: 1rem 0;
@@ -73,11 +68,20 @@ h1 {
 }
 
 .game-play input:hover,
-.game-play button:hover {
+.btn:hover {
     border: 2px dashed teal;
     background-color: purple;
     color: #fff;
     text-transform: uppercase;
+}
+
+.btn-start-game {
+    background-color: teal;
+    color: #fff;
+}
+
+.display-none {
+    display: none;
 }
 
 

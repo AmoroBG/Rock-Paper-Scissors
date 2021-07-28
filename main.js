@@ -1,10 +1,15 @@
-// Math.random() * (max - min) + min
-// console.log(Math.floor(Math.random() * 3) + 1);
-let computerPlay = Math.floor(Math.random() * 3) + 1
-let humanPlay;
-let win;
-// function computerScore()
+// Variables Declarations
+const humanInput = document.getElementById("game-input")
+const play = document.getElementById("play")
+const result = document.getElementById("result")
+const startGame = document.getElementById("start-game")
+let computerPlay = ""
+let humanPlay = ""
+let win = ""
+    // function computerScore()
 function computerScore() {
+    // Generate Random Number
+    computerPlay = Math.floor(Math.random() * 3) + 1
     if (computerPlay == 1) {
         computerPlay = "Rock"
     } else if (computerPlay == 2) {
@@ -16,6 +21,7 @@ function computerScore() {
 }
 // function humanScore() 
 function humanScore() {
+    humanPlay = humanInput.value
     if (humanPlay == 1) {
         humanPlay = "Rock"
     } else if (humanPlay == 2) {
@@ -50,4 +56,17 @@ function playGame() {
     }
     console.log(win);
 }
-playGame()
+play.addEventListener("click", function() {
+    // computerScore()
+    // humanScore()
+    playGame()
+    humanInput.value = ""
+    result.innerHTML = "<h2>" + win + "</h2>"
+    play.classList.add("display-none")
+    startGame.classList.remove("display-none")
+})
+startGame.addEventListener("click", function() {
+    result.innerHTML = '<input type="number" id="game-input" placeholder="Enter a number between 1 and 3 to play ...">'
+    startGame.classList.add("display-none")
+    play.classList.remove("display-none")
+})
