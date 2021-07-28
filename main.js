@@ -21,6 +21,9 @@ function computerScore() {
 }
 // function humanScore() 
 function humanScore() {
+    // if (!validateHumanInput()) {
+    //     return false
+    // }
     humanPlay = humanInput.value
     if (humanPlay == 1) {
         humanPlay = "Rock"
@@ -56,9 +59,21 @@ function playGame() {
     }
     console.log(win);
 }
+
+// function validateHumanInput
+function validateHumanInput() {
+    if (humanInput.value < 1 || humanInput.value > 3) {
+        alert("Your input must be between 1 and 3")
+        humanInput.value = ""
+        return false
+    }
+    return true
+}
+// Event Listeners
 play.addEventListener("click", function() {
-    // computerScore()
-    // humanScore()
+    if (!validateHumanInput()) {
+        return false
+    }
     playGame()
     humanInput.value = ""
     result.innerHTML = "<h2>" + win + "</h2>"
