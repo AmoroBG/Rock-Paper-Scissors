@@ -3,9 +3,9 @@ const humanInput = document.getElementById("game-input")
 const play = document.getElementById("play")
 const result = document.getElementById("result")
 const startGame = document.getElementById("start-game")
-let computerPlay = ""
-let humanPlay = ""
-let win = ""
+let computerPlay
+let humanPlay
+let win
     // function computerScore()
 function computerScore() {
     // Generate Random Number
@@ -21,9 +21,7 @@ function computerScore() {
 }
 // function humanScore() 
 function humanScore() {
-    // if (!validateHumanInput()) {
-    //     return false
-    // }
+
     humanPlay = humanInput.value
     if (humanPlay == 1) {
         humanPlay = "Rock"
@@ -38,6 +36,7 @@ function humanScore() {
 function playGame() {
     computerScore()
     humanScore()
+
     if (computerPlay == "Rock" && humanPlay == "Rock") {
         win = "Draw"
     } else if (computerPlay == "Rock" && humanPlay == "Paper") {
@@ -60,20 +59,10 @@ function playGame() {
     console.log(win);
 }
 
-// function validateHumanInput
-function validateHumanInput() {
-    if (humanInput.value < 1 || humanInput.value > 3) {
-        alert("Your input must be between 1 and 3")
-        humanInput.value = ""
-        return false
-    }
-    return true
-}
+
 // Event Listeners
 play.addEventListener("click", function() {
-    if (!validateHumanInput()) {
-        return false
-    }
+
     playGame()
     humanInput.value = ""
     result.innerHTML = "<h2>" + win + "</h2>"
