@@ -85,6 +85,7 @@ function playGame() {
     document.getElementById("play-count").innerText = playCount
     if (playCount == 5) {
         document.getElementById("play").classList.add("display-none")
+        document.getElementById("play-count-section").classList.add("display-none")
         document.getElementById("game-over").classList.remove("display-none")
         if (humanScore > computerScore) {
             winner = "You Won!"
