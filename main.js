@@ -4,6 +4,7 @@ let humanChoice
 let humanScore = 0
 let computerScore = 0
 let playCount = 0
+let winner
 
 
 let rock = document.getElementById("rock").addEventListener("click", function() {
@@ -82,5 +83,27 @@ function playGame() {
     document.getElementById("selection").classList.remove("display-none")
     playCount += 1
     document.getElementById("play-count").innerText = playCount
+    if (playCount == 5) {
+        document.getElementById("play").classList.add("display-none")
+        document.getElementById("game-over").classList.remove("display-none")
+        if (humanScore > computerScore) {
+            winner = "You Won!"
+        } else if (humanScore < computerScore) {
+            winner = "Computer Won"
+        } else {
+            winner = "You Draw"
+        }
+        document.getElementById("winner").innerText = winner
+    }
 }
-// playGame()
+
+// Play Again
+document.getElementById("paly-again").addEventListener("click", function() {
+
+    // history.go()
+    // window.location.reload(true);
+    location.reload();
+    document.getElementById("play").classList.remove("display-none")
+    document.getElementById("game-over").classList.add("display-none")
+
+})
