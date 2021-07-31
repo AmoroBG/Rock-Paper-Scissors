@@ -31,56 +31,84 @@ h1 {
 }
 
 
+/* Main */
+
+.main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+}
+
+
 /* Game Board */
 
 .game-board {
-    width: 55%;
+    background-color: #fff;
+    width: 65%;
     height: 100%;
     margin: auto;
-    padding: 1rem;
-    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed tomato;
+    border-radius: 8px;
+    /* text-align: center; */
 }
 
-
-/* game-heading, game-play */
-
-.game-play {
-    margin: 1rem 2rem;
-    padding: 1rem;
-}
-
-
-/* .game-play input,
-.game-play button */
-
-.game-play input,
-.btn {
-    display: inline-block;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid tomato;
-    font-size: 1.4rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.game-board span {
+    font-size: 2rem;
     font-weight: bold;
 }
 
-.game-play input:hover,
-.btn:hover {
-    border: 2px dashed teal;
-    background-color: purple;
-    color: #fff;
-    text-transform: uppercase;
+
+/* score-board */
+
+.score-board,
+.selection {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+    border: 1px dashed tomato;
+    margin: 0 1rem;
+    padding: 1rem 3rem;
 }
 
-.btn-start-game {
-    background-color: teal;
-    color: #fff;
+
+/* play */
+
+.play {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 2rem;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    border: 1px dashed tomato;
 }
 
-.display-none {
-    display: none;
+
+/* img */
+
+img {
+    width: 11rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    opacity: 0.7;
+}
+
+img:hover,
+img:active {
+    opacity: 1;
+    z-index: 2;
+}
+
+
+/* selection */
+
+.selection {
+    font-weight: bold;
 }
 
 
