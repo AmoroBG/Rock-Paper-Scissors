@@ -23,9 +23,9 @@
         <div class="game-board" id="game-board">
             <!-- Score Board -->
             <section class="score-board" id="score-board">
-                <div class="score" id="human-score"> Your Score - <span>0</span></div>
-                <div class="score" id="separator-score"><span>:</span></div>
-                <div class="score" id="computer-score"> <span>0</span> - Computer Score</div>
+                <div class="score"> Your Score - <span id="human-score">0</span></div>
+                <div class="score"><span id="separator-score">:</span></div>
+                <div class="score"> <span id="computer-score">0</span> - Computer Score</div>
             </section>
             <!-- Play - Rock, Scissors and Paper images -->
             <section class="play" id="play">
@@ -35,14 +35,18 @@
                 <div class="playing-items" id="paper">
                     <img src="images/paper.jpg" alt="Paper" id="img-paper">
                 </div>
-                <div class="playing-items" id="Scissors">
+                <div class="playing-items" id="scissors">
                     <img src="images/scissors.jpg" alt="Scissors" id="img-scissors">
                 </div>
 
             </section>
             <!-- Results - Win, Draw and Lost -->
-            <section class="selection" id="selection">
-                <p>You Play Rock - Computer Play Paper. Computer Won!</p>
+            <section class="selection display-none" id="selection">
+                You Play Rock - Computer Play Paper. Computer Won!
+            </section>
+            <section class="play-count">
+                <p>Number of Plays: </p>
+                <p id="play-count"></p>
             </section>
         </div>
     </main>
